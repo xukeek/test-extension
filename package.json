@@ -1,0 +1,38 @@
+{
+  "name": "parcel-preact-tailwindcss-chrome-extension-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "clear": "rm -rf dist .cache",
+    "watch": "yarn clear && parcel watch src/{main.html,options.html,background.js} -d dist/src --public-url ./ -t node --bundle-node-modules",
+    "build": "yarn clear && parcel build src/{main.html,options.html,background.js} -d dist/src --public-url ./"
+  },
+  "staticFiles": {
+    "staticPath": [
+      {
+        "staticPath": "static",
+        "staticOutDir": "../static/"
+      },
+      {
+        "staticPath": "manifest.json",
+        "staticOutDir": "../"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "less": "^3.12.2",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-static-files-copy": "^2.5.0",
+    "tailwindcss": "^1.9.6"
+  },
+  "dependencies": {
+    "preact": "^10.5.5"
+  },
+  "alias": {
+    "react": "preact/compat",
+    "react-dom/test-utils": "preact/test-utils",
+    "react-dom": "preact/compat"
+  }
+}

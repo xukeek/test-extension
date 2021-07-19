@@ -1,0 +1,23 @@
+{
+  "name": "Chrome Extension boilerplate",
+  "version": "1.0",
+  "description": "Chrome Extension boilerplate with Parcel + Preact + TailwindCSS",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_icon": "static/icon_32.png"
+  },
+  "icons": {
+    "48": "static/icon_32.png"
+  },
+  "permissions": [
+    "tabs",
+    "contextMenus"
+  ],
+  "background": {
+    "scripts": ["./src/background.js"]
+  },
+  "options_ui": {
+    "page": "./src/options.html",
+    "open_in_tab": true
+  }
+}
